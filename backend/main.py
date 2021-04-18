@@ -11,8 +11,6 @@ import tensorflow_hub as hub
 from pydantic import BaseModel
 
 
-
-
 # IMPORTANT STATE VARIABLES
 module_url = 'https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/2'
 bert_layer = hub.KerasLayer(module_url, trainable=True)
@@ -22,9 +20,10 @@ do_lower_case = bert_layer.resolved_object.do_lower_case.numpy()
 tokenizer = bert_tokenization.FullTokenizer(vocab_file, do_lower_case)
 
 
-
 # UTILITY FUNCTIONS
-saved_model = tf.keras.models.load_model(f'{config.MODEL_PATH}/{config.MODEL_NAME}')
+saved_model = tf.keras.models.load_model(
+    f'{config.MODEL_PATH}/{config.MODEL_NAME}')
+
 
 def bert_encode(texts, tokenizer, max_len=512):
     all_tokens = []
@@ -55,7 +54,9 @@ def bert_encode(texts, tokenizer, max_len=512):
 class Item(BaseModel):
     input_text: str
 
+
 app = FastAPI()
+
 
 @app.get("/")
 def helloWorld():
@@ -74,7 +75,11 @@ async def predict(item: Item):
     Returns
     -------
     dict
-        containing confidence score and CyberPolice message.
+        Example dict
+        {
+            "confidence": 0.014952600002288818,
+            "CyberPolice": "CYBER POLICE: says this sentence is not Sexually Harassing."
+        }
     """
     inp = bert_encode([item.input_text], tokenizer, max_len=config.MAX_LEN)
     pred = saved_model.predict(inp)
