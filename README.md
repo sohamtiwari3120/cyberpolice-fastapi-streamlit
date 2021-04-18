@@ -12,7 +12,6 @@ The [project](https://github.com/whopriyam/Sexual-Harassment-Classification) det
 
 The application uses BERT model trained on a dataset of sexually harassing tweets to detect sexual harassment in texts.
 ##### Project Structure
-# cyberpolice-fastapi-streamlit
 
 * backend/
   * models/
