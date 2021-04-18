@@ -12,27 +12,29 @@ The [project](https://github.com/whopriyam/Sexual-Harassment-Classification) det
 
 The application uses BERT model trained on a dataset of sexually harassing tweets to detect sexual harassment in texts.
 ##### Project Structure
-root/
-┣ backend/
-┃ ┣ models/
-┃ ┃ ┗ *saved_model_name* /
-┃ ┣ `Dockerfile`
-┃ ┣ `__init__.py`
-┃ ┣ `config.py`
-┃ ┣ `main.py`
-┃ ┗ `requirements.txt`
-┣ frontend/
-┃ ┣ `Dockerfile`
-┃ ┣ `__init__.py`
-┃ ┣ `main.py`
-┃ ┗ `requirements.txt`
-┣ jupyter_notebooks/
-┃ ┗ `Export_Model_Weights_Bert_SH.ipynb`
-┣ storage/
-┣ `.gitignore`
-┣ `LICENSE`
-┣ `README.md`
-┗ `docker-compose.yml`
+# cyberpolice-fastapi-streamlit
+
+* backend/
+  * models/
+    * *saved_model_name/*
+  * `Dockerfile`
+  * `__init__.py`
+  * `config.py`
+  * `main.py`
+  * `requirements.txt`
+* frontend/
+  * `Dockerfile`
+  * `__init__.py`
+  * `main.py`
+  * `requirements.txt`
+* jupyter_notebooks/
+  * `Export_Model_Weights_Bert_SH.ipynb`
+* storage/
+* `.gitignore`
+* `LICENSE`
+* `README.md`
+* `docker-compose.yml`
+
 
 ##### To run the application
 
