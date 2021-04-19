@@ -1,5 +1,9 @@
 ## CYBERPOLICE : using FASTAPI and STREAMLIT
 
+### Images
+![Negative - not sexually harassing](./images/negative.png)
+![Positive - sexually harassing](./images/positive.png)
+
 #### Note:
 - This is a simple ML webapp accompanying the research in https://github.com/whopriyam/Sexual-Harassment-Classification.
 - The application is found to be computationally very expensive and hence the application could not be deployed online using free resources.
